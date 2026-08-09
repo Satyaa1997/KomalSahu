@@ -1,0 +1,457 @@
+/* =========================================
+   MEDICAL COLLEGE TOP BAR
+========================================= */
+
+.topbar {
+  width: 100%;
+  background: #0b4f71;
+  color: #ffffff;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  position: relative;
+  z-index: 1000;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.topbar-container {
+  width: min(1400px, 94%);
+  min-height: 48px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+
+/* =========================================
+   LEFT SECTION
+========================================= */
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 13px;
+}
+
+
+.topbar-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+.topbar-link:hover {
+  color: #67e8df;
+}
+
+
+.topbar-link svg {
+  font-size: 12px;
+}
+
+
+.external-icon {
+  font-size: 9px !important;
+  opacity: 0.7;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.topbar-divider {
+  width: 1px;
+  height: 15px;
+
+  background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================
+   COLLEGE CODE
+========================================= */
+
+.college-code {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+
+/* =========================================
+   RIGHT SECTION
+========================================= */
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  flex-shrink: 0;
+}
+
+
+.contact-item {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+
+.contact-item:hover {
+  color: #67e8df;
+}
+
+
+/* =========================================
+   CONTACT ICON
+========================================= */
+
+.contact-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(14, 159, 154, 0.18);
+
+  border: 1px solid rgba(103, 232, 223, 0.25);
+
+  border-radius: 50%;
+
+  color: #67e8df;
+
+  font-size: 12px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   CONTACT CONTENT
+========================================= */
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.contact-content small {
+  font-family: "Inter", sans-serif;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  letter-spacing: 0.3px;
+}
+
+
+.contact-content strong {
+  font-family: "Inter", sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  color: #ffffff;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   CONTACT DIVIDER
+========================================= */
+
+.contact-divider {
+  width: 1px;
+  height: 30px;
+
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .topbar-container {
+    width: 95%;
+    gap: 15px;
+  }
+
+  .topbar-left {
+    gap: 9px;
+  }
+
+  .topbar-link {
+    font-size: 11px;
+  }
+
+  .college-code {
+    display: none;
+  }
+
+  .topbar-divider {
+    height: 13px;
+  }
+
+  .topbar-right {
+    gap: 12px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL LAPTOP / TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .topbar-container {
+    min-height: auto;
+
+    padding: 6px 0;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    row-gap: 6px;
+  }
+
+  .topbar-left {
+    justify-content: center;
+  }
+
+  .topbar-right {
+    justify-content: center;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ONLY EMAIL + PHONE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .topbar-container {
+
+    width: 94%;
+
+    min-height: 38px;
+
+    padding: 5px 0;
+
+    /* IMPORTANT */
+    flex-direction: row;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: nowrap;
+  }
+
+
+  /* Hide Webmail / PCI / AICTE / Codes */
+
+  .topbar-left {
+    display: none;
+  }
+
+
+  /* Contact Section */
+
+  .topbar-right {
+
+    width: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+  }
+
+
+  /* Contact item */
+
+  .contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    min-width: 0;
+  }
+
+
+  /* Icons */
+
+  .contact-icon {
+
+    width: 24px;
+    height: 24px;
+
+    font-size: 9px;
+
+    border-radius: 50%;
+  }
+
+
+  /* Text */
+
+  .contact-content {
+
+    gap: 1px;
+  }
+
+
+  .contact-content small {
+
+    font-size: 7px;
+
+    line-height: 1;
+  }
+
+
+  .contact-content strong {
+
+    font-size: 8px;
+
+    line-height: 1.1;
+
+    white-space: nowrap;
+  }
+
+
+  /* Divider */
+
+  .contact-divider {
+
+    width: 1px;
+
+    height: 23px;
+
+    flex-shrink: 0;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .topbar-container {
+
+    width: 96%;
+
+    min-height: 36px;
+
+    padding: 4px 0;
+
+    gap: 9px;
+  }
+
+
+  .topbar-right {
+
+    gap: 9px;
+  }
+
+
+  .contact-item {
+
+    gap: 5px;
+  }
+
+
+  .contact-icon {
+
+    width: 22px;
+    height: 22px;
+
+    font-size: 8px;
+  }
+
+
+  .contact-content small {
+
+    font-size: 6.5px;
+  }
+
+
+  .contact-content strong {
+
+    font-size: 7.5px;
+  }
+
+
+  .contact-divider {
+
+    height: 21px;
+  }
+
+}

@@ -1,0 +1,458 @@
+/* =========================================
+   HOME SLIDER
+========================================= */
+
+.home-slider {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  background: #062f44;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.slider-background {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transform: scale(1.02);
+
+  animation: sliderZoom 5s ease-in-out;
+}
+
+@keyframes sliderZoom {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.slider-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 31, 45, 0.96) 0%,
+      rgba(6, 47, 68, 0.82) 45%,
+      rgba(6, 47, 68, 0.35) 100%
+    );
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.slider-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1400px, 94%);
+  height: 100%;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.slider-content {
+  max-width: 720px;
+  padding: 50px 0;
+}
+
+
+.slider-small-title {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  color: #67e8df;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.slider-content h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: clamp(38px, 5vw, 65px);
+
+  line-height: 1.08;
+
+  letter-spacing: -2px;
+}
+
+
+.slider-content h1 span {
+  display: block;
+
+  color: #67e8df;
+}
+
+
+.slider-content p {
+  max-width: 600px;
+
+  margin: 24px 0;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.slider-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+
+.slider-primary-btn,
+.slider-secondary-btn {
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 0 22px;
+
+  border-radius: 7px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+
+.slider-primary-btn {
+  background: #ffffff;
+  color: #0b4f71;
+}
+
+
+.slider-primary-btn:hover {
+  color: #0b4f71;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.slider-secondary-btn {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  color: #ffffff;
+}
+
+
+.slider-secondary-btn:hover {
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.slider-contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: fit-content;
+
+  margin-top: 30px;
+
+  color: #67e8df;
+
+  text-decoration: none;
+}
+
+
+.slider-contact span {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 12px;
+}
+
+
+.slider-contact strong {
+  color: #ffffff;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.slider-arrow {
+  position: absolute;
+  z-index: 5;
+
+  top: 50%;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.18);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  transition: 0.3s ease;
+}
+
+
+.slider-arrow:hover {
+  background: #ffffff;
+  color: #0b4f71;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+
+.slider-prev {
+  left: 25px;
+}
+
+
+.slider-next {
+  right: 25px;
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.slider-dots {
+  position: absolute;
+  z-index: 5;
+
+  left: 50%;
+  bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transform: translateX(-50%);
+}
+
+
+.slider-dots button {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+
+.slider-dots button.active {
+  width: 28px;
+
+  border-radius: 10px;
+
+  background: #67e8df;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .home-slider {
+    height: 580px;
+  }
+
+  .slider-content {
+    max-width: 650px;
+  }
+
+  .slider-content h1 {
+    font-size: 48px;
+  }
+
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .slider-prev {
+    left: 15px;
+  }
+
+  .slider-next {
+    right: 15px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .home-slider {
+    height: 600px;
+  }
+
+  .slider-container {
+    width: 92%;
+  }
+
+  .slider-content {
+    padding: 50px 0;
+  }
+
+  .slider-small-title {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .slider-content h1 {
+    font-size: 36px;
+    line-height: 1.12;
+
+    letter-spacing: -1px;
+  }
+
+  .slider-content p {
+    margin: 20px 0;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+  .slider-buttons {
+    flex-direction: column;
+    align-items: stretch;
+
+    width: 100%;
+  }
+
+  .slider-primary-btn,
+  .slider-secondary-btn {
+    width: 100%;
+    min-height: 45px;
+  }
+
+  .slider-contact {
+    margin-top: 22px;
+  }
+
+  .slider-arrow {
+    display: none;
+  }
+
+  .slider-dots {
+    bottom: 18px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .home-slider {
+    height: 570px;
+  }
+
+  .slider-content h1 {
+    font-size: 31px;
+  }
+
+  .slider-content p {
+    font-size: 10px;
+  }
+}
