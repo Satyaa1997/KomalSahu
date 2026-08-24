@@ -9,3 +9,417 @@ html,body{
   height: 100%;
   width: 100%;
 }
+/* =========================================
+   GLOBAL PAGE STYLING & HERO
+========================================= */
+:root {
+  --primary: #0a2540;
+  --teal-accent: #0d9488;
+  --teal-light: #f0fdfa;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --card-bg: #ffffff;
+}
+
+.page-wrapper {
+  width: 100%;
+  background: #f8fafc;
+  min-height: 80vh;
+  padding-bottom: 80px;
+}
+
+.site-container {
+  width: min(1360px, 94%);
+  margin: 0 auto;
+}
+
+/* Page Header Hero */
+.page-hero {
+  background: linear-gradient(135deg, #061826 0%, #0a2540 60%, #0d9488 100%);
+  color: #ffffff;
+  padding: 60px 0;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.page-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.page-breadcrumb a {
+  color: #2dd4bf;
+  text-decoration: none;
+}
+
+.page-hero h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  margin: 0 0 10px;
+  font-weight: 800;
+}
+
+.page-hero p {
+  color: #cbd5e1;
+  font-size: 15px;
+  max-width: 650px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Common Card & Section Elements */
+.content-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(10, 37, 64, 0.04);
+  margin-bottom: 30px;
+}
+
+.section-tag {
+  color: var(--teal-accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+/* =========================================
+   ABOUT PAGES (Introduction, Messages)
+========================================= */
+.message-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.message-profile-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+}
+
+.message-profile-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.profile-info {
+  padding: 20px;
+}
+
+.profile-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.profile-info span {
+  color: var(--teal-accent);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.quote-box {
+  border-left: 4px solid var(--teal-accent);
+  padding-left: 20px;
+  font-size: 16px;
+  font-style: italic;
+  color: #334155;
+  margin-bottom: 25px;
+}
+
+/* =========================================
+   TABLES & DOWNLOADS (Docs, Calendar, Affiliation)
+========================================= */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.custom-table th {
+  background: #f1f5f9;
+  color: var(--primary);
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 13.5px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.custom-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-color);
+  color: #475569;
+  font-size: 13.5px;
+}
+
+.custom-table tr:hover {
+  background: #f8fafc;
+}
+
+.download-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--teal-light);
+  color: var(--teal-accent);
+  padding: 7px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12.5px;
+  transition: all 0.2s;
+}
+
+.download-link-btn:hover {
+  background: var(--teal-accent);
+  color: #ffffff;
+}
+
+/* =========================================
+   FACULTY GRID
+========================================= */
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.faculty-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faculty-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(10, 37, 64, 0.08);
+}
+
+.faculty-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.faculty-details {
+  padding: 20px;
+}
+
+.faculty-details h4 {
+  margin: 0 0 4px;
+  color: var(--primary);
+  font-size: 16px;
+}
+
+.faculty-designation {
+  color: var(--teal-accent);
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.faculty-qual {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   GALLERY GRID
+========================================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 240px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6, 24, 38, 0.85) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* =========================================
+   NEWS & EVENTS
+========================================= */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+.news-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.news-date {
+  font-size: 12px;
+  color: var(--teal-accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.news-body h3 {
+  font-size: 17px;
+  color: var(--primary);
+  margin: 0 0 10px;
+}
+
+/* =========================================
+   CONTACT & LOGIN
+========================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+}
+
+.contact-form-card {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  border-color: var(--teal-accent);
+}
+
+.btn-submit {
+  width: 100%;
+  background: var(--teal-accent);
+  color: #ffffff;
+  border: none;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-submit:hover {
+  background: #0f766e;
+}
+
+.login-box-wrapper {
+  max-width: 440px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(10, 37, 64, 0.06);
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+  .message-layout,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

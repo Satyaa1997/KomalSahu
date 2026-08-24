@@ -1,14 +1,14 @@
 
-import React from "react";
 import { Link } from "react-router-dom";
-
 import {
   FaGraduationCap,
   FaFlask,
   FaBookOpen,
-  FaUserGraduate,
   FaArrowRight,
   FaCheckCircle,
+  FaHospital,
+  FaAward,
+  FaChalkboardTeacher
 } from "react-icons/fa";
 
 import "./Home.css";
@@ -20,681 +20,205 @@ import campusImg from "../assets/images/p2.jpeg";
 const Home = () => {
   return (
     <main className="home-page">
-
-      {/* =========================================
-          HOME SLIDER
-      ========================================= */}
-
+      {/* Slider Hero */}
       <HomeSlider />
 
-
-      {/* =========================================
-          HIGHLIGHTS
-      ========================================= */}
-
-      <section className="home-highlights">
-
-        <div className="home-container highlights-grid">
-
-          <div className="highlight-item">
-
-            <div className="highlight-icon">
-              <FaGraduationCap />
-            </div>
-
+      {/* Trust & Highlights Strip */}
+      <section className="highlights-section">
+        <div className="site-container highlights-grid">
+          <div className="highlight-card">
+            <div className="highlight-icon"><FaAward /></div>
             <div>
-              <strong>Quality Education</strong>
-              <span>
-                Professional Pharmacy Learning
-              </span>
+              <h3>Approved Education</h3>
+              <p>PCI & Govt. Recognized</p>
             </div>
-
           </div>
 
-
-          <div className="highlight-item">
-
-            <div className="highlight-icon">
-              <FaFlask />
-            </div>
-
+          <div className="highlight-card">
+            <div className="highlight-icon"><FaFlask /></div>
             <div>
-              <strong>Practical Training</strong>
-              <span>
-                Laboratory Based Learning
-              </span>
+              <h3>Advanced Laboratories</h3>
+              <p>Practical & Research Focused</p>
             </div>
-
           </div>
 
-
-          <div className="highlight-item">
-
-            <div className="highlight-icon">
-              <FaUserGraduate />
-            </div>
-
+          <div className="highlight-card">
+            <div className="highlight-icon"><FaChalkboardTeacher /></div>
             <div>
-              <strong>Student Focused</strong>
-              <span>
-                Career Oriented Environment
-              </span>
+              <h3>Experienced Faculty</h3>
+              <p>Dedicated Mentorship</p>
             </div>
-
           </div>
 
-
-          <div className="highlight-item">
-
-            <div className="highlight-icon">
-              <FaBookOpen />
-            </div>
-
+          <div className="highlight-card">
+            <div className="highlight-icon"><FaHospital /></div>
             <div>
-              <strong>Academic Excellence</strong>
-              <span>
-                Strong Learning Foundation
-              </span>
+              <h3>Career & Hospital Tie-ups</h3>
+              <p>Clinical Internships</p>
             </div>
-
           </div>
-
         </div>
-
       </section>
 
-
-      {/* =========================================
-          ABOUT
-      ========================================= */}
-
-      <section className="home-about">
-
-        <div className="home-container about-grid">
-
-          {/* IMAGE */}
-
-          <div className="about-image-box">
-
+      {/* About Section */}
+      <section className="about-section">
+        <div className="site-container about-grid">
+          <div className="about-image-wrapper">
             <img
               src={aboutImg}
-              alt="Shri Komal Sahu Smarak Pharmacy College"
+              alt="Shri Komal Sahu Smarak Pharmacy College Campus"
+              className="about-main-img"
             />
-
-            <div className="about-badge">
-
+            <div className="about-floating-card">
               <FaGraduationCap />
-
               <div>
-                <strong>Pharmacy</strong>
-                <span>Education</span>
+                <strong>Excellence in</strong>
+                <span>Pharmaceutical Sciences</span>
               </div>
-
             </div>
-
           </div>
 
-
-          {/* CONTENT */}
-
-          <div className="about-content">
-
-            <span className="home-label">
-              ABOUT OUR COLLEGE
-            </span>
-
+          <div className="about-text-content">
+            <span className="section-subtitle">ABOUT OUR INSTITUTION</span>
             <h2>
-              Building Knowledge,
-              <span>
-                {" "}Shaping Healthcare Professionals
-              </span>
+              Building Pharmaceutical Knowledge, <span>Shaping Healthcare Leaders</span>
             </h2>
-
+            <p className="lead-p">
+              Shri Komal Sahu Smarak Pharmacy College is established with the vision to deliver high-standard educational infrastructure and ethical medical values to aspiring pharma professionals.
+            </p>
             <p>
-              Shri Komal Sahu Smarak Pharmacy College is
-              dedicated to providing students with a strong
-              academic foundation in pharmaceutical sciences.
+              We prioritize comprehensive theoretical knowledge combined with intense laboratory training, active industrial exposure, and disciplined clinical learning.
             </p>
 
-            <p>
-              We focus on theoretical understanding, practical
-              laboratory exposure, professional discipline and
-              overall development of our students.
-            </p>
-
-
-            {/* POINTS */}
-
-            <div className="about-points">
-
-              <div>
-                <FaCheckCircle />
-                <span>
-                  Quality Academic Environment
-                </span>
-              </div>
-
-              <div>
-                <FaCheckCircle />
-                <span>
-                  Practical Laboratory Learning
-                </span>
-              </div>
-
-              <div>
-                <FaCheckCircle />
-                <span>
-                  Experienced & Supportive Faculty
-                </span>
-              </div>
-
-              <div>
-                <FaCheckCircle />
-                <span>
-                  Career Oriented Education
-                </span>
-              </div>
-
+            <div className="about-features-grid">
+              <div className="feature-item"><FaCheckCircle /> Modern Analytical Labs</div>
+              <div className="feature-item"><FaCheckCircle /> Rich Library & E-Journals</div>
+              <div className="feature-item"><FaCheckCircle /> Specialized Faculty Support</div>
+              <div className="feature-item"><FaCheckCircle /> Placement & Guidance Cell</div>
             </div>
 
-
-            <Link
-              to="/about"
-              className="home-btn"
-            >
-              Know More
-              <FaArrowRight />
-            </Link>
-
+            <div className="about-actions">
+              <Link to="/about" className="btn-solid">
+                Discover More <FaArrowRight />
+              </Link>
+              <Link to="/admissions" className="btn-outline">
+                Admission Procedure
+              </Link>
+            </div>
           </div>
-
         </div>
-
       </section>
 
-
-      {/* =========================================
-          PROGRAMS
-      ========================================= */}
-
-      
-{/* =========================================
-    PROGRAMS
-========================================= */}
-
-        <section className="home-programs">
-
-  <div className="home-container">
-
-    {/* HEADING */}
-
-    <div className="home-heading">
-
-      <span className="home-label">
-        OUR PROGRAMS
-      </span>
-
-      <h2>
-        Explore Our
-        <span> Pharmacy Programs</span>
-      </h2>
-
-      <p>
-        Develop the knowledge and practical skills
-        required to build a professional career in
-        pharmaceutical sciences.
-      </p>
-
-    </div>
-
-
-    {/* =========================================
-        PROGRAM SLIDER
-    ========================================= */}
-
-    <div className="program-slider">
-
-      <div className="program-track">
-
-        {/* CARD 1 */}
-
-        <div className="program-card">
-
-          <div className="program-icon">
-            <FaGraduationCap />
-          </div>
-
-          <span className="program-type">
-            UNDERGRADUATE PROGRAM
-          </span>
-
-          <h3>
-            Bachelor of Pharmacy
-          </h3>
-
-          <p>
-            A comprehensive pharmacy education focused
-            on pharmaceutical sciences, practical learning
-            and professional development.
-          </p>
-
-          <Link to="/academics">
-            View Program
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-
-        {/* CARD 2 */}
-
-        <div className="program-card featured">
-
-          <div className="program-icon">
-            <FaBookOpen />
-          </div>
-
-          <span className="program-type">
-            DIPLOMA PROGRAM
-          </span>
-
-          <h3>
-            Diploma in Pharmacy
-          </h3>
-
-          <p>
-            Build essential pharmaceutical knowledge
-            with academic learning and practical exposure.
-          </p>
-
-          <Link to="/academics">
-            View Program
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-
-        {/* CARD 3 */}
-
-        <div className="program-card">
-
-          <div className="program-icon">
-            <FaFlask />
-          </div>
-
-          <span className="program-type">
-            PRACTICAL LEARNING
-          </span>
-
-          <h3>
-            Laboratory Training
-          </h3>
-
-          <p>
-            Practical laboratory activities help students
-            understand and apply pharmaceutical concepts.
-          </p>
-
-          <Link to="/facilities">
-            View Facilities
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-
-        {/* CARD 4 */}
-
-        <div className="program-card">
-
-          <div className="program-icon">
-            <FaGraduationCap />
-          </div>
-
-          <span className="program-type">
-            UNDERGRADUATE PROGRAM
-          </span>
-
-          <h3>
-            Bachelor of Pharmacy
-          </h3>
-
-          <p>
-            A comprehensive pharmacy education focused
-            on pharmaceutical sciences, practical learning
-            and professional development.
-          </p>
-
-          <Link to="/academics">
-            View Program
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-
-        {/* CARD 5 */}
-
-        <div className="program-card featured">
-
-          <div className="program-icon">
-            <FaBookOpen />
-          </div>
-
-          <span className="program-type">
-            DIPLOMA PROGRAM
-          </span>
-
-          <h3>
-            Diploma in Pharmacy
-          </h3>
-
-          <p>
-            Build essential pharmaceutical knowledge
-            with academic learning and practical exposure.
-          </p>
-
-          <Link to="/academics">
-            View Program
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-
-        {/* CARD 6 */}
-
-        <div className="program-card">
-
-          <div className="program-icon">
-            <FaFlask />
-          </div>
-
-          <span className="program-type">
-            PRACTICAL LEARNING
-          </span>
-
-          <h3>
-            Laboratory Training
-          </h3>
-
-          <p>
-            Practical laboratory activities help students
-            understand and apply pharmaceutical concepts.
-          </p>
-
-          <Link to="/facilities">
-            View Facilities
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-
-        {/* DUPLICATE SET FOR SEAMLESS LOOP */}
-
-        <div className="program-card">
-
-          <div className="program-icon">
-            <FaGraduationCap />
-          </div>
-
-          <span className="program-type">
-            UNDERGRADUATE PROGRAM
-          </span>
-
-          <h3>
-            Bachelor of Pharmacy
-          </h3>
-
-          <p>
-            A comprehensive pharmacy education focused
-            on pharmaceutical sciences, practical learning
-            and professional development.
-          </p>
-
-          <Link to="/academics">
-            View Program
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-
-        <div className="program-card featured">
-
-          <div className="program-icon">
-            <FaBookOpen />
-          </div>
-
-          <span className="program-type">
-            DIPLOMA PROGRAM
-          </span>
-
-          <h3>
-            Diploma in Pharmacy
-          </h3>
-
-          <p>
-            Build essential pharmaceutical knowledge
-            with academic learning and practical exposure.
-          </p>
-
-          <Link to="/academics">
-            View Program
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-
-        <div className="program-card">
-
-          <div className="program-icon">
-            <FaFlask />
-          </div>
-
-          <span className="program-type">
-            PRACTICAL LEARNING
-          </span>
-
-          <h3>
-            Laboratory Training
-          </h3>
-
-          <p>
-            Practical laboratory activities help students
-            understand and apply pharmaceutical concepts.
-          </p>
-
-          <Link to="/facilities">
-            View Facilities
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-
-        <div className="program-card">
-
-          <div className="program-icon">
-            <FaGraduationCap />
-          </div>
-
-          <span className="program-type">
-            UNDERGRADUATE PROGRAM
-          </span>
-
-          <h3>
-            Bachelor of Pharmacy
-          </h3>
-
-          <p>
-            A comprehensive pharmacy education focused
-            on pharmaceutical sciences, practical learning
-            and professional development.
-          </p>
-
-          <Link to="/academics">
-            View Program
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-
-        <div className="program-card featured">
-
-          <div className="program-icon">
-            <FaBookOpen />
-          </div>
-
-          <span className="program-type">
-            DIPLOMA PROGRAM
-          </span>
-
-          <h3>
-            Diploma in Pharmacy
-          </h3>
-
-          <p>
-            Build essential pharmaceutical knowledge
-            with academic learning and practical exposure.
-          </p>
-
-          <Link to="/academics">
-            View Program
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-
-        <div className="program-card">
-
-          <div className="program-icon">
-            <FaFlask />
-          </div>
-
-          <span className="program-type">
-            PRACTICAL LEARNING
-          </span>
-
-          <h3>
-            Laboratory Training
-          </h3>
-
-          <p>
-            Practical laboratory activities help students
-            understand and apply pharmaceutical concepts.
-          </p>
-
-          <Link to="/facilities">
-            View Facilities
-            <FaArrowRight />
-          </Link>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-        </section>
-
-
-
-      {/* =========================================
-          CAMPUS
-      ========================================= */}
-
-      <section className="home-campus">
-
-        <img
-          src={campusImg}
-          alt="Shri Komal Sahu Pharmacy College Campus"
-          className="campus-bg"
-        />
-
-        <div className="campus-overlay"></div>
-
-        <div className="home-container campus-content">
-
-          {/* LEFT CONTENT */}
-
-          <div className="campus-text">
-
-            <span className="home-label">
-              CAMPUS & FACILITIES
-            </span>
-
-            <h2>
-              Learn in an Environment
-              <span> Built for Growth</span>
-            </h2>
-
+      {/* Programs Section */}
+      <section className="programs-section">
+        <div className="site-container">
+          <div className="section-header-center">
+            <span className="section-subtitle">ACADEMIC EXCELLENCE</span>
+            <h2>Our Premier Pharmacy Programs</h2>
             <p>
-              Our campus provides a supportive environment
-              where students can focus on academics, practical
-              training and professional development.
+              Designed to equip students with the essential scientific capabilities and hands-on clinical acumen needed in the modern pharmaceutical sector.
             </p>
-
-            <Link
-              to="/facilities"
-              className="campus-btn"
-            >
-              Explore Facilities
-              <FaArrowRight />
-            </Link>
-
           </div>
 
-
-          {/* RIGHT LIST */}
-
-          <div className="campus-list">
-
-            <div>
-              <FaCheckCircle />
-              <span>
-                Modern Learning Environment
-              </span>
+          <div className="programs-grid-modern">
+            {/* Program 1 */}
+            <div className="program-box">
+              <div className="program-header">
+                <span className="program-pill">4 Years Degree</span>
+                <div className="program-icon-box"><FaGraduationCap /></div>
+              </div>
+              <h3>Bachelor of Pharmacy (B.Pharm)</h3>
+              <p>
+                An exhaustive 4-year undergraduate course covering Medicinal Chemistry, Pharmacology, Pharmaceutics, Pharmacognosy, and Regulatory Affairs.
+              </p>
+              <ul className="program-perks">
+                <li><FaCheckCircle /> Clinical & Hospital Training</li>
+                <li><FaCheckCircle /> Industrial Formulations</li>
+              </ul>
+              <Link to="/academics" className="program-action-link">
+                View Course Structure <FaArrowRight />
+              </Link>
             </div>
 
-            <div>
-              <FaCheckCircle />
-              <span>
-                Practical Laboratories
-              </span>
+            {/* Program 2 (Featured) */}
+            <div className="program-box featured">
+              <div className="program-header">
+                <span className="program-pill featured-pill">2 Years Diploma</span>
+                <div className="program-icon-box"><FaBookOpen /></div>
+              </div>
+              <h3>Diploma in Pharmacy (D.Pharm)</h3>
+              <p>
+                A 2-year foundational program focused on drug dispensing, community healthcare, hospital pharmacy practice, and fundamental drug formulation.
+              </p>
+              <ul className="program-perks">
+                <li><FaCheckCircle /> Registered Pharmacist Qualification</li>
+                <li><FaCheckCircle /> Practical Lab Exposure</li>
+              </ul>
+              <Link to="/academics" className="program-action-link">
+                View Course Structure <FaArrowRight />
+              </Link>
             </div>
 
-            <div>
-              <FaCheckCircle />
-              <span>
-                Student Support
-              </span>
+            {/* Program 3 */}
+            <div className="program-box">
+              <div className="program-header">
+                <span className="program-pill">Hands-on Learning</span>
+                <div className="program-icon-box"><FaFlask /></div>
+              </div>
+              <h3>Advanced Laboratory Training</h3>
+              <p>
+                Specialized practical modules focusing on modern equipment, analytical techniques, chemical synthesis, and standardized drug testing methods.
+              </p>
+              <ul className="program-perks">
+                <li><FaCheckCircle /> Machine Room & Herbarium</li>
+                <li><FaCheckCircle /> Safety & Compliance Focused</li>
+              </ul>
+              <Link to="/facilities" className="program-action-link">
+                Explore Laboratories <FaArrowRight />
+              </Link>
             </div>
-
-            <div>
-              <FaCheckCircle />
-              <span>
-                Academic Resources
-              </span>
-            </div>
-
           </div>
-
         </div>
-
       </section>
 
+      {/* Campus & Infrastructure */}
+      <section className="campus-section">
+        <img src={campusImg} alt="Campus Infrastructure" className="campus-bg-img" />
+        <div className="campus-gradient-overlay" />
+        <div className="site-container campus-inner">
+          <div className="campus-text-side">
+            <span className="section-subtitle light">CAMPUS LIFE & ENVIRONMENT</span>
+            <h2>State-of-the-Art Infrastructure Designed for Student Growth</h2>
+            <p>
+              Our expansive campus is thoughtfully structured with fully equipped laboratories, spacious classrooms, Wi-Fi connectivity, and a resource-rich library to support your academic voyage.
+            </p>
+            <Link to="/facilities" className="btn-solid-light">
+              Take Virtual Campus Tour <FaArrowRight />
+            </Link>
+          </div>
 
+          <div className="campus-cards-grid">
+            <div className="infra-card">
+              <h4>Modern Pharma Labs</h4>
+              <p>Precision equipment for real-world formulation and chemical testing.</p>
+            </div>
+            <div className="infra-card">
+              <h4>Comprehensive Library</h4>
+              <p>Thousands of national/international textbooks, journals & digital archives.</p>
+            </div>
+            <div className="infra-card">
+              <h4>Smart Classrooms</h4>
+              <p>Audio-visual equipped lecture halls for interactive and collaborative study.</p>
+            </div>
+            <div className="infra-card">
+              <h4>Green & Safe Campus</h4>
+              <p>Peaceful, hygienic, and student-first environment with dedicated transport.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
 
 export default Home;
-

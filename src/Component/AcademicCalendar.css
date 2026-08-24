@@ -1,0 +1,130 @@
+.docs-page {
+  width: 100%;
+  background-color: #f8fafc;
+  min-height: 85vh;
+  padding-bottom: 80px;
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+}
+
+.docs-hero {
+  background: linear-gradient(135deg, #061826 0%, #0a2540 60%, #0d9488 100%);
+  color: #ffffff;
+  padding: 60px 0;
+  margin-bottom: 45px;
+}
+
+.docs-container {
+  width: min(1360px, 92%);
+  margin: 0 auto;
+}
+
+.docs-breadcrumb {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.docs-breadcrumb a {
+  color: #2dd4bf;
+  text-decoration: none;
+}
+
+.docs-hero h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.docs-hero p {
+  color: #cbd5e1;
+  font-size: 15px;
+  max-width: 650px;
+  margin: 0;
+}
+
+.docs-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(10, 37, 64, 0.04);
+}
+
+.docs-tag {
+  color: #0d9488;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.docs-card h2 {
+  font-size: clamp(22px, 2.5vw, 30px);
+  color: #0a2540;
+  font-weight: 800;
+  margin: 0 0 20px;
+}
+
+.docs-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  text-align: left;
+}
+
+.docs-table th {
+  background: #f1f5f9;
+  color: #0a2540;
+  padding: 16px 20px;
+  font-size: 13.5px;
+  font-weight: 700;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.docs-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 13.5px;
+}
+
+.docs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.docs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0fdfa;
+  color: #0d9488;
+  padding: 7px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12.5px;
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  transition: all 0.2s ease;
+}
+
+.docs-btn:hover {
+  background: #0d9488;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .docs-card {
+    padding: 22px 16px;
+  }
+}

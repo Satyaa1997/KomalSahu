@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaArrowRight,
   FaPhoneAlt,
   FaChevronLeft,
   FaChevronRight,
+  FaAward
 } from "react-icons/fa";
-
 import "./HomeSlider.css";
 
 import slide1 from "../assets/images/hero.jpeg";
@@ -16,27 +16,39 @@ import slide3 from "../assets/images/hero.jpeg";
 const slides = [
   {
     image: slide1,
-    smallTitle: "WELCOME TO SHRI KOMAL SAHU SMARAK",
-    title: "Quality Education in",
-    highlight: "Pharmaceutical Sciences",
+    badge: "PCI & BOARD OF TECHNICAL EDUCATION AFFILIATED",
+    title: "Advancing Global Healthcare Through",
+    highlight: "Quality Pharmacy Education",
     description:
-      "Empowering students with quality pharmaceutical education, practical learning and professional development.",
+      "Empowering the next generation of pharmacists with state-of-the-art research laboratories, modern curriculum, and expert mentorship.",
+    primaryBtn: "Apply for Admission",
+    primaryLink: "/admission-form",
+    secondaryBtn: "Explore Programs",
+    secondaryLink: "/academics"
   },
   {
     image: slide2,
-    smallTitle: "EXCELLENCE IN PHARMACY EDUCATION",
-    title: "Learn Today.",
-    highlight: "Lead Tomorrow.",
+    badge: "EXCELLENCE IN PHARMACEUTICAL RESEARCH",
+    title: "Learn in Modern Labs,",
+    highlight: "Lead Tomorrow’s Innovations",
     description:
-      "Build strong academic knowledge and practical skills for a successful career in pharmacy.",
+      "Comprehensive training in Drug Formulation, Pharmacology, and Clinical Research to prepare you for global careers.",
+    primaryBtn: "Download Brochure",
+    primaryLink: "/downloads",
+    secondaryBtn: "Campus Tour",
+    secondaryLink: "/facilities"
   },
   {
     image: slide3,
-    smallTitle: "YOUR FUTURE STARTS HERE",
-    title: "Shape Your Career",
-    highlight: "in Pharmacy",
+    badge: "100% PLACEMENT ASSISTANCE & SCHOLARSHIPS",
+    title: "Build a Rewarding Career in",
+    highlight: "Pharmaceutical Sciences",
     description:
-      "Discover an environment focused on learning, practical training and overall student development.",
+      "Join a premier educational institute committed to discipline, integrity, academic brilliance, and hands-on skill development.",
+    primaryBtn: "Admission Form",
+    primaryLink: "/admission-form",
+    secondaryBtn: "Contact Helpdesk",
+    secondaryLink: "/contact"
   },
 ];
 
@@ -46,135 +58,71 @@ const HomeSlider = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
-
+    }, 6500);
     return () => clearInterval(timer);
   }, []);
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
-    );
-  };
+  const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
 
   const slide = slides[current];
 
   return (
     <section className="home-slider">
-
-      {/* BACKGROUND IMAGE */}
-
       <div
         className="slider-background"
-        style={{
-          backgroundImage: `url(${slide.image})`,
-        }}
+        style={{ backgroundImage: `url(${slide.image})` }}
       />
+      <div className="slider-overlay" />
 
-      {/* OVERLAY */}
-
-      <div className="slider-overlay"></div>
-
-
-      {/* CONTENT */}
-
-      <div className="slider-container">
-
+      <div className="site-container slider-container">
         <div className="slider-content">
-
-          <span className="slider-small-title">
-            {slide.smallTitle}
-          </span>
-
-          <h1>
-            {slide.title}
-            <span>{slide.highlight}</span>
-          </h1>
-
-          <p>
-            {slide.description}
-          </p>
-
-
-          {/* BUTTONS */}
-
-          <div className="slider-buttons">
-
-            <Link
-              to="/admission-form"
-              className="slider-primary-btn"
-            >
-              Apply for Admission
-              <FaArrowRight />
-            </Link>
-
-            <Link
-              to="/about"
-              className="slider-secondary-btn"
-            >
-              Explore College
-            </Link>
-
+          <div className="slider-badge">
+            <FaAward /> {slide.badge}
           </div>
 
+          <h1>
+            {slide.title} <span>{slide.highlight}</span>
+          </h1>
 
-          {/* PHONE */}
+          <p>{slide.description}</p>
 
-          <a
-            href="tel:7355632066"
-            className="slider-contact"
-          >
-            <FaPhoneAlt />
+          <div className="slider-buttons">
+            <Link to={slide.primaryLink} className="slider-primary-btn">
+              {slide.primaryBtn} <FaArrowRight />
+            </Link>
+            <Link to={slide.secondaryLink} className="slider-secondary-btn">
+              {slide.secondaryBtn}
+            </Link>
+          </div>
 
-            <span>
-              Admission Enquiry
-              <strong>7355632066</strong>
-            </span>
-          </a>
-
+          <div className="slider-contact-box">
+            <div className="contact-icon"><FaPhoneAlt /></div>
+            <div>
+              <span className="contact-label">ADMISSION HELPLINE</span>
+              <a href="tel:7355632066" className="contact-number">+91 7355632066 / 9651371295</a>
+            </div>
+          </div>
         </div>
-
       </div>
 
-
-      {/* ARROWS */}
-
-      <button
-        className="slider-arrow slider-prev"
-        onClick={prevSlide}
-        aria-label="Previous Slide"
-      >
+      <button className="slider-arrow slider-prev" onClick={prevSlide} aria-label="Previous">
         <FaChevronLeft />
       </button>
-
-      <button
-        className="slider-arrow slider-next"
-        onClick={nextSlide}
-        aria-label="Next Slide"
-      >
+      <button className="slider-arrow slider-next" onClick={nextSlide} aria-label="Next">
         <FaChevronRight />
       </button>
 
-
-      {/* DOTS */}
-
       <div className="slider-dots">
-
         {slides.map((_, index) => (
           <button
             key={index}
             className={current === index ? "active" : ""}
             onClick={() => setCurrent(index)}
-            aria-label={`Go to slide ${index + 1}`}
+            aria-label={`Slide ${index + 1}`}
           />
         ))}
-
       </div>
-
     </section>
   );
 };

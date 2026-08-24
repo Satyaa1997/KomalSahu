@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo1 from "../assets/images/logo1.png"
+import logo1 from "../assets/images/logo1.png";
 import {
   FaGraduationCap,
   FaFileAlt,
   FaBookOpen,
-  FaBuilding,
-  FaExternalLinkAlt,
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
@@ -15,6 +13,7 @@ import {
   FaInstagram,
   FaYoutube,
   FaLinkedinIn,
+  FaExternalLinkAlt
 } from "react-icons/fa";
 
 import "./Footer.css";
@@ -22,390 +21,122 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="site-footer">
-
-      {/* =========================================
-          ADMISSION CTA
-      ========================================= */}
-
+      {/* Admission Call-to-Action Strip */}
       <section className="footer-admission">
-
-        <div className="footer-admission-container">
-
-          <div className="footer-admission-content">
-
-            <span className="footer-eyebrow">
-              START YOUR PHARMACY JOURNEY
-            </span>
-
-            <h2>
-              Build Your Future in
-              <span> Pharmaceutical Sciences</span>
-            </h2>
-
+        <div className="site-container footer-admission-box">
+          <div className="footer-admission-text">
+            <span className="cta-eyebrow">ADMISSIONS OPEN FOR 2026-27</span>
+            <h2>Build Your Future in Pharmaceutical Sciences</h2>
             <p>
-              Join Shri Komal Sahu Smarak Pharmacy College and
-              take the next step toward a successful career
-              in pharmaceutical education.
+              Join Shri Komal Sahu Smarak Pharmacy College and take the next step toward a successful career in healthcare, clinical research, and hospital pharmacy.
             </p>
-
           </div>
 
-          <div className="footer-admission-buttons">
-
-            <Link
-              to="/admissions"
-              className="footer-primary-btn"
-            >
-              Apply Admissions
-              <FaArrowRight />
+          <div className="footer-admission-actions">
+            <Link to="/admissions" className="btn-cta-white">
+              Apply Now <FaArrowRight />
             </Link>
-
-            <Link
-              to="/admission-form"
-              className="footer-outline-btn"
-            >
+            <Link to="/admission-form" className="btn-cta-ghost">
               Admission Form
             </Link>
-
           </div>
-
         </div>
-
       </section>
 
-
-      {/* =========================================
-          MAIN FOOTER
-      ========================================= */}
-
+      {/* Main Footer Links & Info */}
       <div className="footer-main">
-
-        <div className="footer-container">
-
-
-          {/* =====================================
-              COLLEGE INFO
-          ===================================== */}
-
-          <div className="footer-about">
-
-            <Link
-              to="/"
-              className="footer-logo"
-            >
-
-              <div className="footer-logo-image">
-                <img
-                  src={logo1}
-                  alt="Shri Komal Sahu Pharmacy College"
-                />
-              </div>
-
+        <div className="site-container footer-grid">
+          {/* About Column */}
+          <div className="footer-col-about">
+            <Link to="/" className="footer-brand">
+              <img src={logo1} alt="Shri Komal Sahu Pharmacy College" />
             </Link>
-
-            <h3>
-              Shri Komal Sahu Smarak
-              <br />
-              Pharmacy College
-            </h3>
-
+            <h3>Shri Komal Sahu Smarak Pharmacy College</h3>
             <p>
-              Empowering students with quality pharmaceutical
-              education, practical knowledge and professional
-              skills for a better healthcare future.
+              Empowering students with high-grade pharmaceutical training, practical knowledge, and professional ethics for a resilient healthcare future.
             </p>
 
-
-            {/* SOCIAL MEDIA */}
-
-            <div className="footer-social">
-
-              <a
-                href="#"
-                aria-label="Facebook"
-              >
-                <FaFacebookF />
-              </a>
-
-              <a
-                href="#"
-                aria-label="Instagram"
-              >
-                <FaInstagram />
-              </a>
-
-              <a
-                href="#"
-                aria-label="YouTube"
-              >
-                <FaYoutube />
-              </a>
-
-              <a
-                href="#"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedinIn />
-              </a>
-
+            <div className="footer-social-strip">
+              <a href="#" aria-label="Facebook"><FaFacebookF /></a>
+              <a href="#" aria-label="Instagram"><FaInstagram /></a>
+              <a href="#" aria-label="YouTube"><FaYoutube /></a>
+              <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
             </div>
-
           </div>
 
-
-          {/* =====================================
-              ADMISSIONS
-          ===================================== */}
-
-          <div className="footer-column">
-
-            <h4>
-              <FaGraduationCap />
-              Admissions
-            </h4>
-
+          {/* Column 2: Admissions */}
+          <div className="footer-col">
+            <h4><FaGraduationCap /> Admissions</h4>
             <ul>
-
-              <li>
-                <Link to="/admissions">
-                  Apply Admissions
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/fee-structure">
-                  Fee Structure
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/admission-form">
-                  Admission Form
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/scholarship">
-                  Scholarship
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/academics">
-                  Education
-                </Link>
-              </li>
-
+              <li><Link to="/admissions">Apply Admissions</Link></li>
+              <li><Link to="/fee-structure">Fee Structure</Link></li>
+              <li><Link to="/admission-form">Admission Form</Link></li>
+              <li><Link to="/scholarship">Scholarships</Link></li>
+              <li><Link to="/academics">Courses Offered</Link></li>
             </ul>
-
           </div>
 
-
-          {/* =====================================
-              USEFUL LINKS
-          ===================================== */}
-
-          <div className="footer-column">
-
-            <h4>
-              <FaBookOpen />
-              Useful Links
-            </h4>
-
+          {/* Column 3: Useful Links */}
+          <div className="footer-col">
+            <h4><FaBookOpen /> Useful Links</h4>
             <ul>
-
+              <li><Link to="/academics">Academics</Link></li>
+              <li><Link to="/facilities">Campus Facilities</Link></li>
               <li>
-                <Link to="/academics">
-                  Academics
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/facilities">
-                  Facilities
-                </Link>
-              </li>
-
-              <li>
-                <a
-                  href="https://www.aicte-india.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  AICTE
-                  <FaExternalLinkAlt />
+                <a href="https://www.aicte-india.org/" target="_blank" rel="noopener noreferrer">
+                  AICTE Portal <FaExternalLinkAlt className="external-ico" />
                 </a>
               </li>
-
-              <li>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Webmail
-                </a>
-              </li>
-
-              <li>
-                <Link to="/contact">
-                  Contact Us
-                </Link>
-              </li>
-
+              <li><a href="#" onClick={(e) => e.preventDefault()}>Student Webmail</a></li>
+              <li><Link to="/contact">Helpdesk & Contact</Link></li>
             </ul>
-
           </div>
 
-
-          {/* =====================================
-              QUICK INFORMATION
-          ===================================== */}
-
-          <div className="footer-column">
-
-            <h4>
-              <FaFileAlt />
-              Information
-            </h4>
-
+          {/* Column 4: Quick Info */}
+          <div className="footer-col">
+            <h4><FaFileAlt /> Information</h4>
             <ul>
-
-              <li>
-                <Link to="/directories">
-                  Contact / Directories
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/admissions">
-                  Admissions
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/emergency">
-                  Emergency Information
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/feedback">
-                  Questions & Feedback
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/media">
-                  Media Relations
-                </Link>
-              </li>
-
+              <li><Link to="/directories">Staff Directory</Link></li>
+              <li><Link to="/emergency">Emergency Info</Link></li>
+              <li><Link to="/feedback">Queries & Feedback</Link></li>
+              <li><Link to="/media">Media Relations</Link></li>
+              <li><Link to="/downloads">Affiliation Docs</Link></li>
             </ul>
-
           </div>
 
-
-          {/* =====================================
-              CONTACT
-          ===================================== */}
-
-          <div className="footer-contact">
-
-            <h4>
-              <FaBuilding />
-              Contact Us
-            </h4>
-
-
-            <div className="footer-contact-item">
-
-              <span>
+          {/* Column 5: Contact Info */}
+          <div className="footer-col-contact">
+            <h4>Contact Address</h4>
+            <div className="contact-list">
+              <div className="contact-item">
                 <FaMapMarkerAlt />
-              </span>
+                <p>Badagaon, Punapar, Jiyanpur, Azamgarh, Uttar Pradesh - 276127</p>
+              </div>
 
-              <p>
-                Badagaon, Punapar,
-                <br />
-                Jiyanpur, Azamgarh,
-                <br />
-                Uttar Pradesh - 276127
-              </p>
-
-            </div>
-
-
-            <a
-              href="tel:7355632066"
-              className="footer-contact-item"
-            >
-
-              <span>
+              <a href="tel:7355632066" className="contact-item">
                 <FaPhoneAlt />
-              </span>
+                <p>+91 7355632066<br />+91 9651371295</p>
+              </a>
 
-              <p>
-                7355632066
-                <br />
-                9651371295
-              </p>
-
-            </a>
-
-
-            <a
-              href="mailto:care@sksspharmacycollege.in"
-              className="footer-contact-item"
-            >
-
-              <span>
+              <a href="mailto:care@sksspharmacycollege.in" className="contact-item">
                 <FaEnvelope />
-              </span>
-
-              <p>
-                care@sksspharmacycollege.in
-              </p>
-
-            </a>
-
+                <p>care@sksspharmacycollege.in</p>
+              </a>
+            </div>
           </div>
-
         </div>
-
       </div>
 
-
-      {/* =========================================
-          BOTTOM BAR
-      ========================================= */}
-
+      {/* Copyright Bar */}
       <div className="footer-bottom">
-
-        <div className="footer-bottom-container">
-
-          <p>
-            © 2026 Shri Komal Sahu Smarak Pharmacy College.
-            All Rights Reserved.
+        <div className="site-container footer-bottom-inner">
+          <p>© 2026 Shri Komal Sahu Smarak Pharmacy College. All Rights Reserved.</p>
+          <p className="footer-developer">
+            Powered By : <strong>Beena Software Solutions</strong>
           </p>
-
-          <p className="footer-powered">
-            Powered By :
-            <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
-            >
-              Beena Software Solutions
-            </a>
-          </p>
-
-          <p className="footer-updated">
-            Site Last Updated :
-            <strong>01 August 2026</strong>
-          </p>
-
+          <p className="footer-status">Site Last Updated : <span>August 2026</span></p>
         </div>
-
       </div>
-
     </footer>
   );
 };
